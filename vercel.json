@@ -1,0 +1,19 @@
+{
+    "version": 2,
+    "builds": [
+        {
+            "src": "sse-server.js",
+            "use": "@vercel/node"
+        }
+    ],
+    "routes": [
+        {
+            "src": "/sse",
+            "dest": "/sse-server.js"
+        },
+        {
+            "src": "/messages",
+            "dest": "/sse-server.js"
+        }
+    ]
+}

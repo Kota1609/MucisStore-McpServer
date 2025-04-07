@@ -1,19 +1,21 @@
 {
-  "name": "mcp-client-and-server",
+  "name": "apps",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "sse-server.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nx run-many -t dev -p admin -p products-api -p frontend -p fulfillment-api --parallel 5",
-    "clean": "rm -rf node_modules && rm -rf pnpm-lock.yaml && rm -rf */**/node_modules && rm -rf */**/pnpm-lock.yaml"
+    "dev": "node sse-server.js",
+    "start": "node sse-server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "packageManager": "pnpm@10.6.5",
-  "devDependencies": {
-    "nx": "20.6.2"
-  },
-  "nx": {}
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.7.0",
+    "express": "^4.21.2",
+    "zod": "^3.24.2"
+  }
 }
