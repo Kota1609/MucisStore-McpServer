@@ -10,7 +10,7 @@ export const server = new McpServer({
 
 server.tool("getOrders", "Get product orders", async () => {
   console.error("Fetching orders");
-  const res = await fetch("http://localhost:8080/orders");
+  const res = await fetch(`${FULFILLMENT_API_URL}/orders`);
   const orders = await res.json();
 
   return { content: [{ type: "text", text: JSON.stringify(orders) }] };
